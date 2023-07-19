@@ -1,7 +1,9 @@
-
+import Nav from "./comps/nav.jsx";
 
 export default function App(){
-    return(<div>
-        hi
-    </div>)
+    return(
+        <div>
+    <Nav/>
+        </div>
+    )
 }
