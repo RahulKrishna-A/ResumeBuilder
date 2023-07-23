@@ -5,12 +5,12 @@ import Educations from "./Education.jsx";
 
 export default function Content(){
     const [UserDetailes,setUserDetails]=useState({
-        FirstName:0,
-        LastName:0,
-        ContactNo:0,
-        Email:0,
-        Location:0,
-        Description:0,
+        FirstName:"",
+        LastName:"",
+        ContactNo:"",
+        Email:"",
+        Location:"",
+        Description:"",
     })
 
     function onChangeUserDetails(e){
@@ -28,63 +28,100 @@ export default function Content(){
     function onAddExperience(e){
         let newExperience = {
             "id":uuidv4(),
-            "position": 0,
-            "companyName":0,
-            "startDate":0,
-            "endDate":0,
-            "summary":0
+            "position": "",
+            "companyName":"",
+            "startDate":"",
+            "endDate":"",
+            "summary":""
         }
         setProfessionalExperience((prev)=>{
             return [...prev,newExperience]
         })
     }
-
+    // ------------------------------------Education------------------
     const [Education,setEducation]=useState([{
         "id":uuidv4(),
-        "School Name": 0,
-        "School Location":0,
-        "startDate":0,
-        "endDate":0,
-        "Field of Study":0,
-        "Description":0
+        "SchoolName": "",
+        "SchoolLocation":"",
+        "startDate":"",
+        "endDate":"",
+        "FieldofStudy":"",
+        "Description":""
     }]);
 
     function onAddeducation(e){
         e.preventDefault()
         let newEducation = {
             "id":uuidv4(),
-            "School Name": 0,
-            "School Location":0,
-            "startDate":0,
-            "endDate":0,
-            "Field of Study":0,
-            "Description":0
+            "SchoolName": "",
+            "SchoolLocation":"",
+            "startDate":"",
+            "endDate":"",
+            "FieldofStudy":"",
+            "Description":""
         }
 
         setEducation((prev)=>{
-            console.log(prev,newEducation)
+
             return [...prev,newEducation]
         })
     }
 
     function onChangeEducation(e){
-        console.log(e)
+
         setEducation((prev)=>{
-            let changedForm  = prev.filter(function (forms){
-                return forms.id = e.currentTarget.parentNode.key
+            // let changedForm  = prev.filter(function (forms){
+            //     return forms.id = e.target.parentNode.key
+            // })
+
+            let changedForm = prev.map((values)=>{
+                if(values.id==e.target.parentNode.id){
+                    console.log("apped-1")
+                    return {...values,[e.target.name]:e.target.value}
+
+                }else{
+                    return {...values}
+                }
             })
-            let newChangedForm = {
-                ...changedForm,
-                [e.target.name]:e.target.value
-            }
-            return [...prev,newChangedForm]
 
+            return [...changedForm]
 
-
-
-        })
+    }
+    )
     }
 
+    function onDeleteEducation(e){
+        console.log(e.target.parentNode)
+        e.preventDefault()
+        setEducation((prev)=>{
+
+
+                return prev.filter((datas)=>{
+                    return datas.id!=e.target.parentNode.id
+                })
+
+            }
+        )
+    }
+
+    const educationList = Education.map((datas,index)=>{
+        return(
+            <Educations
+                canDelete={index!==0}
+                key={datas.id}
+                id={datas.id}
+                SchoolName={datas.SchoolName}
+                SchoolLocation={datas.SchoolLocation}
+                FieldofStudy={datas.FieldofStudy}
+                startDate={datas.startDate}
+                endDate={datas.endDate}
+                Description={datas.Description}
+                onAddeducation={onAddeducation}
+                onChangeEducation={onChangeEducation}
+                onDeleteEducation={onDeleteEducation}
+            />
+        )
+    })
 
 
     const [KeySkills,setKeySkills] = useState([])
@@ -113,12 +150,8 @@ export default function Content(){
                 Desc={UserDetailes.Description}
                 onchangeFn = {onChangeUserDetails}
             />
-            <Educations
-                education={Education}
-                onAddeducation={onAddeducation}
-                onChangeEducation={onChangeEducation}
-
-            />
+            {educationList}
+            <button onClick={onAddeducation}>add</button>
 
 
         </div>
