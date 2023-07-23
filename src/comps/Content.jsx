@@ -2,6 +2,7 @@ import {useState} from "react";
 import { v4 as uuidv4 } from 'uuid';
 import UserDetails from "./UserDetails.jsx";
 import Educations from "./Education.jsx";
+import Experiences from "./Experience.jsx";
 
 export default function Content(){
     const [UserDetailes,setUserDetails]=useState({
@@ -23,21 +24,7 @@ export default function Content(){
         })
     }
 
-    const [ProfessionalExperience,setProfessionalExperience]=useState([]);
 
-    function onAddExperience(e){
-        let newExperience = {
-            "id":uuidv4(),
-            "position": "",
-            "companyName":"",
-            "startDate":"",
-            "endDate":"",
-            "summary":""
-        }
-        setProfessionalExperience((prev)=>{
-            return [...prev,newExperience]
-        })
-    }
     // ------------------------------------Education------------------
     const [Education,setEducation]=useState([{
         "id":uuidv4(),
@@ -69,14 +56,12 @@ export default function Content(){
 
     function onChangeEducation(e){
 
+
         setEducation((prev)=>{
-            // let changedForm  = prev.filter(function (forms){
-            //     return forms.id = e.target.parentNode.key
-            // })
 
             let changedForm = prev.map((values)=>{
                 if(values.id==e.target.parentNode.id){
-                    console.log("apped-1")
+
                     return {...values,[e.target.name]:e.target.value}
 
                 }else{
@@ -91,7 +76,7 @@ export default function Content(){
     }
 
     function onDeleteEducation(e){
-        console.log(e.target.parentNode)
+
         e.preventDefault()
         setEducation((prev)=>{
 
@@ -119,6 +104,85 @@ export default function Content(){
                 onAddeducation={onAddeducation}
                 onChangeEducation={onChangeEducation}
                 onDeleteEducation={onDeleteEducation}
+            />
+        )
+    })
+
+
+    // ------------------------------------ Experience ------------
+    const [ProfessionalExperience,setProfessionalExperience]=useState([
+        {
+            "id":uuidv4(),
+            "position": "",
+            "companyName":"",
+            "startDate":"",
+            "endDate":"",
+            "summary":""
+        }
+    ]);
+
+    function onAddExperience(e){
+        let newExperience = {
+            "id":uuidv4(),
+            "position": "",
+            "companyName":"",
+            "startDate":"",
+            "endDate":"",
+            "summary":""
+        }
+        setProfessionalExperience((prev)=>{
+            return [...prev,newExperience]
+        })
+    }
+
+    function onChangeExperience(e){
+        // console.log(ProfessionalExperience)
+        setProfessionalExperience((prev)=>{
+
+                let changedForm = prev.map((values)=>{
+                    if(values.id==e.target.parentNode.id){
+
+                        return {...values,[e.target.name]:e.target.value}
+
+                    }else{
+                        return {...values}
+                    }
+                })
+
+                return [...changedForm]
+
+            }
+        )
+
+    }    function onDeleteExperience(e){
+
+        e.preventDefault()
+        setProfessionalExperience((prev)=>{
+
+
+                return prev.filter((datas)=>{
+                    return datas.id!=e.target.parentNode.id
+                })
+
+            }
+        )
+    }
+
+
+    const experienceList = ProfessionalExperience.map((datas,index)=>{
+        return(
+            <Experiences
+                canDelete={index!==0}
+                key={datas.id}
+                id={datas.id}
+                position={datas.position}
+                companyName={datas.companyName}
+                startDate={datas.startDate}
+                endDate={datas.endDate}
+                summary={datas.summary}
+                onAddExperience={onAddExperience}
+                onChangeExperience={onChangeExperience}
+                onDeleteExperience={onDeleteExperience}
             />
         )
     })
@@ -152,6 +216,8 @@ export default function Content(){
             />
             {educationList}
             <button onClick={onAddeducation}>add</button>
+            {experienceList}
+            <button onClick={onAddExperience}>add</button>
 
 
         </div>
