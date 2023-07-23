@@ -1,6 +1,7 @@
 import {useState} from "react";
 import { v4 as uuidv4 } from 'uuid';
 import UserDetails from "./UserDetails.jsx";
+import Educations from "./Education.jsx";
 
 export default function Content(){
     const [UserDetailes,setUserDetails]=useState({
@@ -38,9 +39,18 @@ export default function Content(){
         })
     }
 
-    const [Education,setEducation]=useState([]);
+    const [Education,setEducation]=useState([{
+        "id":uuidv4(),
+        "School Name": 0,
+        "School Location":0,
+        "startDate":0,
+        "endDate":0,
+        "Field of Study":0,
+        "Description":0
+    }]);
 
     function onAddeducation(e){
+        e.preventDefault()
         let newEducation = {
             "id":uuidv4(),
             "School Name": 0,
@@ -50,8 +60,28 @@ export default function Content(){
             "Field of Study":0,
             "Description":0
         }
+
         setEducation((prev)=>{
+            console.log(prev,newEducation)
             return [...prev,newEducation]
+        })
+    }
+
+    function onChangeEducation(e){
+        console.log(e)
+        setEducation((prev)=>{
+            let changedForm  = prev.filter(function (forms){
+                return forms.id = e.currentTarget.parentNode.key
+            })
+            let newChangedForm = {
+                ...changedForm,
+                [e.target.name]:e.target.value
+            }
+            return [...prev,newChangedForm]
+
+
+
+
         })
     }
 
@@ -83,6 +113,16 @@ export default function Content(){
                 Desc={UserDetailes.Description}
                 onchangeFn = {onChangeUserDetails}
             />
+            <Educations
+                education={Education}
+                onAddeducation={onAddeducation}
+                onChangeEducation={onChangeEducation}
+
+            />
+
+
         </div>
+
+
     )
 }
