@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import UserDetails from "./UserDetails.jsx";
 import Educations from "./Education.jsx";
 import Experiences from "./Experience.jsx";
+import KeySkill from "./KeySkills.jsx";
 
 export default function Content(){
     const [UserDetailes,setUserDetails]=useState({
@@ -186,20 +187,32 @@ export default function Content(){
             />
         )
     })
-
-
+    // -------------------SKILLS===============================--------------===
     const [KeySkills,setKeySkills] = useState([])
 
     function addKeySkills(e){
 
         setKeySkills((prev)=>{
-            console.log(prev)
-            return [...prev,`newvalue`]
+            // console.log(e.target.parentNode.childNodes[0].value)
+            return [...prev,{
+                "id":uuidv4(),
+                "Skill":e.target.parentNode.childNodes[0].value
+            }]
         })
 
 
     }
+    function deletekeySkills(e){
+        setKeySkills((prev)=>{
+            return prev.filter((prev)=>{
+                return prev.id!=e.target.id
+            })
+        })
+    }
 
+    const KeySkillsList = KeySkills.map((datas)=>{
+        return <KeySkill id={datas.id} key={datas.id} skill={datas.Skill} deletekeySkills={deletekeySkills}  />}
+    )
 
 
 
@@ -218,6 +231,13 @@ export default function Content(){
             <button onClick={onAddeducation}>add</button>
             {experienceList}
             <button onClick={onAddExperience}>add</button>
+            <div id={"skills_container"}>
+                {KeySkillsList}
+                <div>
+                    <input type={"text"}/>
+                    <button onClick={addKeySkills}>skill add</button>
+                </div>
+            </div>
 
 
         </div>

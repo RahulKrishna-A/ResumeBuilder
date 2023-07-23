@@ -8,7 +8,7 @@ export default function Experiences(props){
 
                 <input type={"date"} name={"startDate"} value={props.startDate} onChange={props.onChangeExperience}/>
                 <input type={"date"} name={"endDate"} value={props.endDate} onChange={props.onChangeExperience}/>
-                <input type={"text"} name={"summary"} value={props.summary} onChange={props.onChangeExperience}/>
+                <textarea   name={"summary"} value={props.summary} onChange={props.onChangeExperience}></textarea>
 
                 {props.canDelete && <button onClick={props.onDeleteExperience}>Delete</button>}
             </form>

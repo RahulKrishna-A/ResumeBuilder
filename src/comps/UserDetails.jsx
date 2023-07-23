@@ -8,7 +8,7 @@ export default function UserDetails(props){
             <input type={"text"} value={props.LastName} name={"LastName"} onChange={props.onchangeFn}/>
             <input type={"text"} value={props.Contact} name={"ContactNo"} onChange={props.onchangeFn}/>
             <input type={"text"} value={props.Location} name={"Location"} onChange={props.onchangeFn}/>
-            <input type={"text"} value={props.Desc} name={"Description"} onChange={props.onchangeFn}/>
+            <textarea value={props.Desc} name={"Description"} onChange={props.onchangeFn}></textarea>
         </div>
 
     )

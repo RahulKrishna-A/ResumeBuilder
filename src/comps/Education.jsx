@@ -9,7 +9,7 @@ export default function Educations(props){
 
             <input type={"date"} name={"startDate"} value={props.startDate} onChange={props.onChangeEducation}/>
             <input type={"date"} name={"endDate"} value={props.endDate} onChange={props.onChangeEducation}/>
-            <input type={"text"} name={"Description"} value={props.Description} onChange={props.onChangeEducation}/>
+            <textarea  name={"Description"} value={props.Description} onChange={props.onChangeEducation}></textarea>
 
             {props.canDelete && <button onClick={props.onDeleteEducation}>Delete</button>}
         </form>
