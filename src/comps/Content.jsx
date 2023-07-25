@@ -4,6 +4,7 @@ import UserDetails from "./UserDetails.jsx";
 import Educations from "./Education.jsx";
 import Experiences from "./Experience.jsx";
 import KeySkill from "./KeySkills.jsx";
+import "./styles/Content.css"
 
 export default function Content(){
     const [UserDetailes,setUserDetails]=useState({
@@ -191,7 +192,7 @@ export default function Content(){
     const [KeySkills,setKeySkills] = useState([])
 
     function addKeySkills(e){
-
+        if(e.target.parentNode.childNodes[0].value){
         setKeySkills((prev)=>{
             // console.log(e.target.parentNode.childNodes[0].value)
             return [...prev,{
@@ -201,7 +202,7 @@ export default function Content(){
         })
 
 
-    }
+    }}
     function deletekeySkills(e){
         setKeySkills((prev)=>{
             return prev.filter((prev)=>{
@@ -217,7 +218,10 @@ export default function Content(){
 
 
     return (
-        <div>
+        <div id={"Content-Containter"}>
+        <div id={"User_Container"}>
+            <div id={"UserDetails_Container"}>
+                <p className={"Section_header"}>User Details</p>
             <UserDetails
                 FirstName={UserDetailes.FirstName}
                 LastName={UserDetailes.LastName}
@@ -227,11 +231,19 @@ export default function Content(){
                 Desc={UserDetailes.Description}
                 onchangeFn = {onChangeUserDetails}
             />
+            </div>
+            <div id={"Education_Container"}>
+                <p className={"Section_header"}>Education</p>
             {educationList}
             <button onClick={onAddeducation}>add</button>
+            </div>
+            <div id={"Experience_Container"} >
+                <p className={"Section_header"}>Experience</p>
             {experienceList}
             <button onClick={onAddExperience}>add</button>
+            </div>
             <div id={"skills_container"}>
+                <p className={"Section_header"}>Skills</p>
                 {KeySkillsList}
                 <div>
                     <input type={"text"}/>
@@ -240,6 +252,7 @@ export default function Content(){
             </div>
 
 
+        </div>
         </div>
 
 

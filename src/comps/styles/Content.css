@@ -1,0 +1,15 @@
+
+#Content-Containter{
+    display: flex;
+    background-color: green;
+    width: calc(100% - 2rem - 2rem);
+    margin: 2rem;
+}
+
+#User_Container{
+    width: 50vw;
+    background-color: teal;
+    border-radius: 0.6rem;
+    border-top: 3px solid darkblue ;
+
+}
