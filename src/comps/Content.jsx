@@ -241,12 +241,12 @@ export default function Content() {
                 <div id={"Education_Container"}>
                     <p className={"Section_header"}>Education</p>
                     {educationList}
-                    <button onClick={onAddeducation}>Add Education</button>
+                    <button className={"add-btn"} onClick={onAddeducation}>Add Education</button>
                 </div>
                 <div id={"Experience_Container"}>
                     <p className={"Section_header"}>Experience</p>
                     {experienceList}
-                    <button onClick={onAddExperience}>Add</button>
+                    <button className={"add-btn"} onClick={onAddExperience}>Add Experience </button>
                 </div>
                 <div id={"skills_container"}>
                     <p className={"Section_header"}>Skills</p>

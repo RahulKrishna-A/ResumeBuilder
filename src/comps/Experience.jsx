@@ -28,7 +28,7 @@ export default function Experiences(props){
                     <textarea className="input-text" name="summary" value={props.summary} onChange={props.onChangeExperience}></textarea>
                 </label>
 
-                {props.canDelete && <button className="delete-button" onClick={props.onDeleteExperience}>Delete</button>}
+                {props.canDelete && <button className={"dlt-btn"}  onClick={props.onDeleteExperience}>Delete</button>}
             </form>
         </div>
 

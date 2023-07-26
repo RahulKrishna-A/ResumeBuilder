@@ -35,7 +35,7 @@ export default function Educations(props){
                 <textarea className={"input-text"} name={"Description"} value={props.Description} onChange={props.onChangeEducation}></textarea>
             </label>
 
-            {props.canDelete && <button onClick={props.onDeleteEducation}>Delete</button>}
+            {props.canDelete && <button className={"dlt-btn"} onClick={props.onDeleteEducation}>Delete</button>}
         </form>
     </div>
 
