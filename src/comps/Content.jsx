@@ -1,100 +1,100 @@
 import {useState} from "react";
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 import UserDetails from "./UserDetails.jsx";
 import Educations from "./Education.jsx";
 import Experiences from "./Experience.jsx";
 import KeySkill from "./KeySkills.jsx";
 import "./styles/Content.css"
 
-export default function Content(){
-    const [UserDetailes,setUserDetails]=useState({
-        FirstName:"",
-        LastName:"",
-        ContactNo:"",
-        Email:"",
-        Location:"",
-        Description:"",
+export default function Content() {
+    const [UserDetailes, setUserDetails] = useState({
+        FirstName: "",
+        LastName: "",
+        ContactNo: "",
+        Email: "",
+        Location: "",
+        Description: "",
     })
 
-    function onChangeUserDetails(e){
-        setUserDetails((prev)=>{
+    function onChangeUserDetails(e) {
+        setUserDetails((prev) => {
             console.log(prev)
             return {
                 ...prev,
-                [e.target.name]:e.target.value
+                [e.target.name]: e.target.value
             }
         })
     }
 
 
     // ------------------------------------Education------------------
-    const [Education,setEducation]=useState([{
-        "id":uuidv4(),
+    const [Education, setEducation] = useState([{
+        "id": uuidv4(),
         "SchoolName": "",
-        "SchoolLocation":"",
-        "startDate":"",
-        "endDate":"",
-        "FieldofStudy":"",
-        "Description":""
+        "SchoolLocation": "",
+        "startDate": "",
+        "endDate": "",
+        "FieldofStudy": "",
+        "Description": ""
     }]);
 
-    function onAddeducation(e){
+    function onAddeducation(e) {
         e.preventDefault()
         let newEducation = {
-            "id":uuidv4(),
+            "id": uuidv4(),
             "SchoolName": "",
-            "SchoolLocation":"",
-            "startDate":"",
-            "endDate":"",
-            "FieldofStudy":"",
-            "Description":""
+            "SchoolLocation": "",
+            "startDate": "",
+            "endDate": "",
+            "FieldofStudy": "",
+            "Description": ""
         }
 
-        setEducation((prev)=>{
+        setEducation((prev) => {
 
-            return [...prev,newEducation]
+            return [...prev, newEducation]
         })
     }
 
-    function onChangeEducation(e){
+    function onChangeEducation(e) {
 
 
-        setEducation((prev)=>{
+        setEducation((prev) => {
 
-            let changedForm = prev.map((values)=>{
-                if(values.id==e.target.parentNode.id){
+                let changedForm = prev.map((values) => {
+                    if (values.id == e.target.parentNode.parentNode.id) {
 
-                    return {...values,[e.target.name]:e.target.value}
+                        return {...values, [e.target.name]: e.target.value}
 
-                }else{
-                    return {...values}
-                }
-            })
+                    } else {
+                        return {...values}
+                    }
+                })
 
-            return [...changedForm]
+                return [...changedForm]
 
+            }
+        )
     }
-    )
-    }
 
-    function onDeleteEducation(e){
+    function onDeleteEducation(e) {
 
         e.preventDefault()
-        setEducation((prev)=>{
+        setEducation((prev) => {
 
 
-                return prev.filter((datas)=>{
-                    return datas.id!=e.target.parentNode.id
+                return prev.filter((datas) => {
+                    return datas.id != e.target.parentNode.parentNode.id
                 })
 
             }
         )
     }
 
-    const educationList = Education.map((datas,index)=>{
-        return(
+    const educationList = Education.map((datas, index) => {
+        return (
             <Educations
-                canDelete={index!==0}
+                canDelete={index !== 0}
                 key={datas.id}
                 id={datas.id}
                 SchoolName={datas.SchoolName}
@@ -112,41 +112,43 @@ export default function Content(){
 
 
     // ------------------------------------ Experience ------------
-    const [ProfessionalExperience,setProfessionalExperience]=useState([
+    const [ProfessionalExperience, setProfessionalExperience] = useState([
         {
-            "id":uuidv4(),
+            "id": uuidv4(),
             "position": "",
-            "companyName":"",
-            "startDate":"",
-            "endDate":"",
-            "summary":""
+            "companyName": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": ""
         }
     ]);
 
-    function onAddExperience(e){
+    function onAddExperience(e) {
         let newExperience = {
-            "id":uuidv4(),
+            "id": uuidv4(),
             "position": "",
-            "companyName":"",
-            "startDate":"",
-            "endDate":"",
-            "summary":""
+            "companyName": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": ""
         }
-        setProfessionalExperience((prev)=>{
-            return [...prev,newExperience]
+        setProfessionalExperience((prev) => {
+            return [...prev, newExperience]
         })
     }
 
-    function onChangeExperience(e){
-        // console.log(ProfessionalExperience)
-        setProfessionalExperience((prev)=>{
+    function onChangeExperience(e) {
+        console.log(e.target.parentNode.parentNode)
+        console.log(ProfessionalExperience)
+        setProfessionalExperience((prev) => {
 
-                let changedForm = prev.map((values)=>{
-                    if(values.id==e.target.parentNode.id){
+                let changedForm = prev.map((values) => {
+                    if (values.id == e.target.parentNode.parentNode.id) {
+                        console.log("yes")
 
-                        return {...values,[e.target.name]:e.target.value}
+                        return {...values, [e.target.name]: e.target.value}
 
-                    }else{
+                    } else {
                         return {...values}
                     }
                 })
@@ -156,14 +158,16 @@ export default function Content(){
             }
         )
 
-    }    function onDeleteExperience(e){
+    }
+
+    function onDeleteExperience(e) {
 
         e.preventDefault()
-        setProfessionalExperience((prev)=>{
+        setProfessionalExperience((prev) => {
 
 
-                return prev.filter((datas)=>{
-                    return datas.id!=e.target.parentNode.id
+                return prev.filter((datas) => {
+                    return datas.id != e.target.parentNode.parentNode.id
                 })
 
             }
@@ -171,10 +175,10 @@ export default function Content(){
     }
 
 
-    const experienceList = ProfessionalExperience.map((datas,index)=>{
-        return(
+    const experienceList = ProfessionalExperience.map((datas, index) => {
+        return (
             <Experiences
-                canDelete={index!==0}
+                canDelete={index !== 0}
                 key={datas.id}
                 id={datas.id}
                 position={datas.position}
@@ -189,70 +193,72 @@ export default function Content(){
         )
     })
     // -------------------SKILLS===============================--------------===
-    const [KeySkills,setKeySkills] = useState([])
+    const [KeySkills, setKeySkills] = useState([])
 
-    function addKeySkills(e){
-        if(e.target.parentNode.childNodes[0].value){
-        setKeySkills((prev)=>{
-            // console.log(e.target.parentNode.childNodes[0].value)
-            return [...prev,{
-                "id":uuidv4(),
-                "Skill":e.target.parentNode.childNodes[0].value
-            }]
-        })
+    function addKeySkills(e) {
+        if (e.target.parentNode.childNodes[0].value) {
+            setKeySkills((prev) => {
+                // console.log(e.target.parentNode.childNodes[0].value)
+                return [...prev, {
+                    "id": uuidv4(),
+                    "Skill": e.target.parentNode.childNodes[0].value
+                }]
+            })
 
 
-    }}
-    function deletekeySkills(e){
-        setKeySkills((prev)=>{
-            return prev.filter((prev)=>{
-                return prev.id!=e.target.id
+        }
+    }
+
+    function deletekeySkills(e) {
+        setKeySkills((prev) => {
+            return prev.filter((prev) => {
+                return prev.id != e.target.id
             })
         })
     }
 
-    const KeySkillsList = KeySkills.map((datas)=>{
-        return <KeySkill id={datas.id} key={datas.id} skill={datas.Skill} deletekeySkills={deletekeySkills}  />}
+    const KeySkillsList = KeySkills.map((datas) => {
+            return <KeySkill id={datas.id} key={datas.id} skill={datas.Skill} deletekeySkills={deletekeySkills}/>
+        }
     )
-
 
 
     return (
         <div id={"Content-Containter"}>
-        <div id={"User_Container"}>
-            <div id={"UserDetails_Container"}>
-                <p className={"Section_header"}>User Details</p>
-            <UserDetails
-                FirstName={UserDetailes.FirstName}
-                LastName={UserDetailes.LastName}
-                Contact={UserDetailes.ContactNo}
-                Email={UserDetailes.Email}
-                Location={UserDetailes.Location}
-                Desc={UserDetailes.Description}
-                onchangeFn = {onChangeUserDetails}
-            />
-            </div>
-            <div id={"Education_Container"}>
-                <p className={"Section_header"}>Education</p>
-            {educationList}
-            <button onClick={onAddeducation}>add</button>
-            </div>
-            <div id={"Experience_Container"} >
-                <p className={"Section_header"}>Experience</p>
-            {experienceList}
-            <button onClick={onAddExperience}>add</button>
-            </div>
-            <div id={"skills_container"}>
-                <p className={"Section_header"}>Skills</p>
-                {KeySkillsList}
-                <div>
-                    <input type={"text"}/>
-                    <button onClick={addKeySkills}>skill add</button>
+            <div id={"User_Container"}>
+                <div id={"UserDetails_Container"}>
+                    <p className={"Section_header"}>Personal Details</p>
+                    <UserDetails
+                        FirstName={UserDetailes.FirstName}
+                        LastName={UserDetailes.LastName}
+                        Contact={UserDetailes.ContactNo}
+                        Email={UserDetailes.Email}
+                        Location={UserDetailes.Location}
+                        Desc={UserDetailes.Description}
+                        onchangeFn={onChangeUserDetails}
+                    />
                 </div>
+                <div id={"Education_Container"}>
+                    <p className={"Section_header"}>Education</p>
+                    {educationList}
+                    <button onClick={onAddeducation}>Add Education</button>
+                </div>
+                <div id={"Experience_Container"}>
+                    <p className={"Section_header"}>Experience</p>
+                    {experienceList}
+                    <button onClick={onAddExperience}>Add</button>
+                </div>
+                <div id={"skills_container"}>
+                    <p className={"Section_header"}>Skills</p>
+                    {KeySkillsList}
+                    <div>
+                        <input type={"text"}/>
+                        <button onClick={addKeySkills}>skill add</button>
+                    </div>
+                </div>
+
+
             </div>
-
-
-        </div>
         </div>
 
 

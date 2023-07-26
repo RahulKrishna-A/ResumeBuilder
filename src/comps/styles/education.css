@@ -1,0 +1,23 @@
+.education-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 3px 8px -7px ;
+}
+
+.education-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: relative; /* Position relative for pseudo-element */
+}
+
+.education-form::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20%; /* Adjust as needed to position the line */
+    width: 60%; /* Adjust as needed to control the length of the line */
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc); /* Faded line gradient */
+}
