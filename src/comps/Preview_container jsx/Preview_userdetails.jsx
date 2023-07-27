@@ -16,7 +16,7 @@ export default function PreviewUserDetails(props){
                 </div>
             </div>
             <div className={"prev_user_details-desc"}>
-
+                <p>Sed non odio non elit porttitor tincidunt. Donec fermentum, elit sit amet gravida molestie, orci dui eleifend sem, at blandit ipsum diam non purus. Duis dapibus nisi eget vehicula dignissim</p>
             </div>
 
         </div>
