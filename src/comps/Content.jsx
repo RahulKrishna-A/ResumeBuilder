@@ -8,6 +8,7 @@ import KeySkill from "./User_container jsx/KeySkills.jsx";
 
 import PreviewUserDetails from "./Preview_container jsx/Preview_userdetails.jsx";
 import PreviewEducation from "./Preview_container jsx/Preview_ education.jsx";
+import PreviewProfessionalExperience from "./Preview_container jsx/Preview_professionalExperience.jsx";
 
 import "./styles/Content.css"
 
@@ -240,8 +241,12 @@ export default function Content() {
 
     // --------------------------------Preview container methods
     const PreviewEducationList = Education.map((items)=>{
-        // eslint-disable-next-line react/jsx-key
+
         return <PreviewEducation/>
+    })
+    const PreviewProfessionalExperienceList = ProfessionalExperience.map((items)=>{
+
+        return <PreviewProfessionalExperience/>
     })
 
 
@@ -301,6 +306,13 @@ export default function Content() {
                     <p>Education</p>
                 </div>
                 {PreviewEducationList}
+                <div className={"preview_SectionHeader"}>
+                    <p>Professional Experience</p>
+                </div>
+                {PreviewProfessionalExperienceList}
+                <div className={"preview_SectionHeader"}>
+                    <p>Key Skills</p>
+                </div>
             </div>
         </div>
 

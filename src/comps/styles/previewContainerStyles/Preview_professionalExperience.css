@@ -1,0 +1,24 @@
+.prev_experience_positionAndCompany{
+    font-family: 'Source Sans 3', sans-serif;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.prev_experience_position{
+    font-size: 1rem;
+}
+.prev_experience_Company{
+    margin-left: 1rem;
+    font-size: 0.8rem;
+
+}
+
+.font-Libre{
+    font-family: 'Libre Baskerville', serif;
+}
+.prev_experience_desc{
+    font-family: 'Source Sans 3', sans-serif;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
