@@ -1,4 +1,4 @@
-import "./styles/education.css"
+import "../styles/userContainerStyles/education.css"
 
 export default function Educations(props){
 

@@ -1,4 +1,4 @@
-import "./styles/experience.css"
+import "../styles/userContainerStyles/experience.css"
 export default function Experiences(props){
     return(
         <div>

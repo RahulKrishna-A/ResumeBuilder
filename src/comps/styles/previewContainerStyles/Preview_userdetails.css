@@ -1,0 +1,29 @@
+.prev_user_details{
+    display: flex;
+    align-items: center;
+    font-family: 'Libre Baskerville', serif;
+}
+
+
+.prev_user_details-initial{
+    display: flex;
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(218, 119, 33, 0.83);
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+
+}
+.prev_user_details-name-address{
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    color: rgba(218, 119, 33, 0.83);
+}
+.prev_user_details-name-address p:nth-child(3){
+    font-size: 0.8rem;
+    color: black;
+}
+/*----------------preview container styles from content.jsx----------*/

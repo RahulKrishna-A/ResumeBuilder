@@ -1,4 +1,4 @@
-import "./styles/personalDetails.css"
+import "../styles/userContainerStyles/personalDetails.css"
 
 export default function UserDetails(props){
 

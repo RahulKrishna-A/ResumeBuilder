@@ -1,9 +1,13 @@
 import {useState} from "react";
 import {v4 as uuidv4} from 'uuid';
-import UserDetails from "./UserDetails.jsx";
-import Educations from "./Education.jsx";
-import Experiences from "./Experience.jsx";
-import KeySkill from "./KeySkills.jsx";
+import UserDetails from "./User_container jsx/UserDetails.jsx";
+import Educations from "./User_container jsx/Education.jsx";
+import Experiences from "./User_container jsx/Experience.jsx";
+import KeySkill from "./User_container jsx/KeySkills.jsx";
+// -------------preview
+
+import PreviewUserDetails from "./Preview_container jsx/Preview_userdetails.jsx";
+
 import "./styles/Content.css"
 
 
@@ -15,6 +19,8 @@ import SkillsPic from "../assets/Skills.png"
 // =======================================
 
 export default function Content() {
+
+
     const [UserDetailes, setUserDetails] = useState({
         FirstName: "",
         LastName: "",
@@ -278,6 +284,14 @@ export default function Content() {
                 </div>
 
 
+            </div>
+
+
+            <div id={"Preview_container"}>
+                <PreviewUserDetails/>
+                <div className={"preview_SectionHeader"}>
+                    <p>Education</p>
+                </div>
             </div>
         </div>
 

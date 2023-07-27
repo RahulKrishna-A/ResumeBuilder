@@ -8,7 +8,7 @@
 }
 
 #User_Container {
-    width: 40vw;
+    width: 45vw;
     /*background-color: teal;*/
     border-radius: 0.6rem;
     border-top: 4px solid #005705;
@@ -17,6 +17,20 @@
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
+
+
+}
+
+#Preview_container {
+    width: 45vw;
+    /*background-color: teal;*/
+    /*border-radius: 0.6rem;*/
+    margin-left: 2vw;
+    box-shadow: 0px 1px 5px -2px rgba(33, 2, 40, 0.83);
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 2rem 1.5rem 1.5rem 5rem;
 
 }
 
@@ -114,3 +128,5 @@ textarea {
     color: #ffffff;
     background-color: #b70404
 }
+
+/*----------------Preview details general CSS are thereby included in Preview_userdetails.css */

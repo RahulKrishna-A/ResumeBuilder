@@ -1,4 +1,4 @@
-import "./styles/keySkills.css"
+import "../styles/userContainerStyles/keySkills.css"
 
 
 export default function KeySkill(props){
