@@ -21,11 +21,17 @@
 }
 
 .Section_header {
+    display: flex;
     font-family: 'Poppins', sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    align-items: center;
+}
+.Section_header img{
+    height: 1.5rem;
+    margin-right: 1rem;
 }
 
 .forms-label {

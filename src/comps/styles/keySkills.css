@@ -1,4 +1,26 @@
 .skill_add_btn{
     margin-left: 1rem;
     background-color: white;
+    width: 5rem;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.individual_skills {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.skill_dlt{
+    height: 1.25rem;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+    background-color: white;
+    width: 5rem;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #b70404;
+    border: 1.5px solid #b70404;
 }
