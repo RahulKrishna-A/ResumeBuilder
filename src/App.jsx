@@ -3,7 +3,7 @@ import Content from "./comps/Content.jsx";
 import "./comps/styles/App.css"
 export default function App(){
     return(
-        <div>
+        <div id={"app_container"}>
             <Nav/>
 
             <Content />

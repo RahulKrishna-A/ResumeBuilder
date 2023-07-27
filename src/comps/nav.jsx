@@ -1,5 +1,5 @@
 import "./styles/nav.css"
-import logo from "../assets/resumeicon.png"
+import logo from "../assets/resume_icon.png"
 
 export default function Nav(){
     return(

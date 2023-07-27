@@ -21,3 +21,10 @@
     height: 1px;
     background: linear-gradient(to right, transparent, #ccc); /* Faded line gradient */
 }
+
+.exp_dlt{
+    width: 8rem;
+    height: 2rem;
+    margin-top: 3rem;
+    margin-left: 25%;
+}

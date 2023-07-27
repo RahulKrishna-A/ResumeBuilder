@@ -252,8 +252,8 @@ export default function Content() {
                     <p className={"Section_header"}>Skills</p>
                     {KeySkillsList}
                     <div>
-                        <input type={"text"}/>
-                        <button onClick={addKeySkills}>skill add</button>
+                        <input className={"input-text"} type={"text"}/>
+                        <button className={"skill_add_btn"} onClick={addKeySkills}>skill add</button>
                     </div>
                 </div>
 

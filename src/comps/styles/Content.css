@@ -1,71 +1,81 @@
 
-#Content-Containter{
+#Content-Containter {
     display: flex;
     /*background-color: green;*/
     width: calc(100% - 2rem - 2rem);
     margin: 2rem;
-
+    background-color: #eceef2;
 }
 
-#User_Container{
-    width: 50vw;
+#User_Container {
+    width: 40vw;
     /*background-color: teal;*/
     border-radius: 0.6rem;
-    border-top: 2px solid #2828bd ;
-    box-shadow: 0px 1px 5px  -2px rgba(33, 2, 40, 0.83);
+    border-top: 4px solid #005705;
+    box-shadow: 0px 1px 5px -2px rgba(33, 2, 40, 0.83);
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    background-color: #ffffff;
 
 }
 
-.Section_header{
+.Section_header {
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-.forms-label{
+
+.forms-label {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.8rem;
     color: black;
     font-weight: 600;
 
 }
-.forms-label p{
+
+.forms-label p {
     width: 15rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
-.input-text{
+
+.input-text {
     font-family: 'Plus Jakarta Sans', sans-serif;
     height: 1.5rem;
     width: 15rem;
-    border-radius:2px ;
+    border-radius: 5px;
     outline: none;
-    border:0.5px solid #575757;
+    border: 0.5px solid #575757;
+    padding-left: 5px;
+    background-color: rgba(235, 236, 239, 0.52);
+
 
 }
-.input-text:focus{
-    border:1px solid #2828bd;
+
+.input-text:focus {
+    border: 2px solid #2828bd;
 }
 
-button{
+button {
     font-family: 'Poppins', sans-serif;
 }
 
-textarea{
+textarea {
     height: 3rem;
     width: 20rem;
     max-width: 100%;
     min-width: 100%;
-    min-height:4rem;
+    min-height: 4rem;
     max-height: 4rem;
     resize: none;
 
 }
 
 
-.add-btn{
+.add-btn {
     margin-left: 50%;
     translate: -50%;
     color: green;
@@ -73,28 +83,28 @@ textarea{
 
     font-weight: 600;
     border-radius: 2px;
-    border:1px solid green;
+    border: 1px solid green;
     padding: 5px;
     transition: all 0.5s;
 }
 
-.add-btn:hover{
+.add-btn:hover {
     color: #ffffff;
     background-color: green
 }
 
-.dlt-btn{
+.dlt-btn {
 
-    color: red;
+    color: #b70404;
     background-color: #ffffff;
     font-weight: 600;
     border-radius: 2px;
-    border:1px solid red;
+    border: 1px solid #b70404;
     padding: 5px;
     transition: all 0.5s;
 }
 
-.dlt-btn:hover{
+.dlt-btn:hover {
     color: #ffffff;
-    background-color: red
+    background-color: #b70404
 }
