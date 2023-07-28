@@ -1,13 +1,22 @@
 import "../styles/previewContainerStyles/Preview_education.css"
+import {format} from "date-fns";
+
 export default function PreviewEducation(props){
+    let StartDate,EndDate
+    if(props.startDate){
+        StartDate = format(new Date(props.startDate),"MMM yyyy")
+    }
+    if(props.endDate){
+        EndDate = format(new Date(props.endDate),"MMM yyyy")
+    }
     return(
         <div className={"reusable_prev_experience"}>
             <div className={"prev_experience_positionAndCompany"}>
-                <p className={"prev_experience_position font-Libre"}>Masters in Human Resources</p>
-                <p className={"prev_experience_Company"}>The University of Texas, Dallas | September 2007 - May 2011</p>
+                <p className={"prev_experience_position font-Libre"}>{props.FieldofStudy}</p>
+                <p className={"prev_experience_Company"}>{props.SchoolName} {props.SchoolLocation && ","}{props.SchoolLocation} {props.startDate &&"|"} {StartDate} - {EndDate}</p>
             </div>
             <div className={"prev_experience_desc"}>
-                Sed non odio non elit porttitor tincidunt. Donec fermentum, elit sit amet gravida molestie, orci dui eleifend sem, at blandit ipsum diam non purus. Duis dapibus nisi eget vehicula dignissim
+                {props.Description}
             </div>
         </div>
     )

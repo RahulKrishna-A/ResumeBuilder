@@ -7,16 +7,16 @@ export default function PreviewUserDetails(props){
         <div >
             <div className={"prev_user_details"}>
                 <div className={"prev_user_details-initial"}>
-                    CC
+                    {props.FirstName[0]}{props.LastName[0]}
                 </div>
                 <div className={"prev_user_details-name-address"}>
-                    <p>Chris</p>
-                    <p>Candidate</p>
-                    <p>email@youremail.com|(469) 385-2948|City</p>
+                    <p>{props.FirstName}</p>
+                    <p>{props.LastName}</p>
+                    <p>{props.Email} {props.Contact && "|"} {props.Contact} {props.Location &&"|"} {props.Location}</p>
                 </div>
             </div>
             <div className={"prev_user_details-desc"}>
-                <p>Sed non odio non elit porttitor tincidunt. Donec fermentum, elit sit amet gravida molestie, orci dui eleifend sem, at blandit ipsum diam non purus. Duis dapibus nisi eget vehicula dignissim</p>
+                <p>{props.Desc}</p>
             </div>
 
         </div>

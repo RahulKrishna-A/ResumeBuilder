@@ -9,6 +9,7 @@ import KeySkill from "./User_container jsx/KeySkills.jsx";
 import PreviewUserDetails from "./Preview_container jsx/Preview_userdetails.jsx";
 import PreviewEducation from "./Preview_container jsx/Preview_ education.jsx";
 import PreviewProfessionalExperience from "./Preview_container jsx/Preview_professionalExperience.jsx";
+import PreviewKeySkills from "./Preview_container jsx/Preview_skills.jsx";
 
 import "./styles/Content.css"
 
@@ -240,13 +241,23 @@ export default function Content() {
 
 
     // --------------------------------Preview container methods
-    const PreviewEducationList = Education.map((items)=>{
+    const PreviewEducationList = Education.map((datas)=>{
 
-        return <PreviewEducation/>
+        return <PreviewEducation
+            key={datas.id}
+            SchoolName={datas.SchoolName}
+            SchoolLocation={datas.SchoolLocation}
+            FieldofStudy={datas.FieldofStudy}
+            startDate={datas.startDate}
+            endDate={datas.endDate}
+            Description={datas.Description}
+
+        />
     })
-    const PreviewProfessionalExperienceList = ProfessionalExperience.map((items)=>{
+    const PreviewProfessionalExperienceList = ProfessionalExperience.map((datas)=>{
 
-        return <PreviewProfessionalExperience/>
+        return <PreviewProfessionalExperience
+            key={datas.id}/>
     })
 
 
@@ -301,7 +312,14 @@ export default function Content() {
 
 
             <div id={"Preview_container"}>
-                <PreviewUserDetails/>
+                <PreviewUserDetails
+                    FirstName={UserDetailes.FirstName}
+                    LastName={UserDetailes.LastName}
+                    Contact={UserDetailes.ContactNo}
+                    Email={UserDetailes.Email}
+                    Location={UserDetailes.Location}
+                    Desc={UserDetailes.Description}
+                />
                 <div className={"preview_SectionHeader"}>
                     <p>Education</p>
                 </div>
@@ -313,6 +331,7 @@ export default function Content() {
                 <div className={"preview_SectionHeader"}>
                     <p>Key Skills</p>
                 </div>
+                <PreviewKeySkills/>
             </div>
         </div>
 

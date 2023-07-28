@@ -1,0 +1,14 @@
+.keyskills_point{
+    font-family: 'Source Sans 3', sans-serif;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 0.5rem;
+}
+.keyskills_pointer{
+    height: 10px;
+    width: 10px;
+    background-color: rgba(218, 119, 33, 0.83);
+    border-radius: 100%;
+    margin-right: 0.5rem;
+}
