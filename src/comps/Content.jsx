@@ -241,7 +241,7 @@ export default function Content() {
 
 
     // --------------------------------Preview container methods
-    const PreviewEducationList = Education.map((datas)=>{
+    const PreviewEducationList = Education.map((datas) => {
 
         return <PreviewEducation
             key={datas.id}
@@ -254,10 +254,28 @@ export default function Content() {
 
         />
     })
-    const PreviewProfessionalExperienceList = ProfessionalExperience.map((datas)=>{
+    const PreviewProfessionalExperienceList = ProfessionalExperience.map((datas) => {
 
-        return <PreviewProfessionalExperience
-            key={datas.id}/>
+        return (<PreviewProfessionalExperience
+
+            key={datas.id}
+
+            position={datas.position}
+            companyName={datas.companyName}
+            startDate={datas.startDate}
+            endDate={datas.endDate}
+            summary={datas.summary}
+
+        />)
+    })
+
+    const PreviewKeySkillsList = KeySkills.map((datas,index)=>{
+
+        return (
+            <PreviewKeySkills key={datas.id} KeySkills_item={datas.Skill}/>
+
+        )
+
     })
 
 
@@ -283,7 +301,7 @@ export default function Content() {
                     <div className={"Section_header"}>
                         <img src={EducationPic}/>
                         <p>Education</p>
-                        </div>
+                    </div>
                     {educationList}
                     <button className={"add-btn"} onClick={onAddeducation}>Add Education</button>
                 </div>
@@ -293,13 +311,13 @@ export default function Content() {
                         <p>Experience</p>
                     </div>
                     {experienceList}
-                    <button className={"add-btn"} onClick={onAddExperience}>Add Experience </button>
+                    <button className={"add-btn"} onClick={onAddExperience}>Add Experience</button>
                 </div>
                 <div id={"skills_container"}>
                     <div className={"Section_header"}>
                         <img src={SkillsPic}/>
                         <p>Skills</p>
-                        </div>
+                    </div>
                     {KeySkillsList}
                     <div>
                         <input className={"input-text"} type={"text"}/>
@@ -331,7 +349,7 @@ export default function Content() {
                 <div className={"preview_SectionHeader"}>
                     <p>Key Skills</p>
                 </div>
-                <PreviewKeySkills/>
+                {PreviewKeySkillsList}
             </div>
         </div>
 

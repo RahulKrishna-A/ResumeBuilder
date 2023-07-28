@@ -10,12 +10,12 @@ export default function PreviewEducation(props){
         EndDate = format(new Date(props.endDate),"MMM yyyy")
     }
     return(
-        <div className={"reusable_prev_experience"}>
-            <div className={"prev_experience_positionAndCompany"}>
-                <p className={"prev_experience_position font-Libre"}>{props.FieldofStudy}</p>
-                <p className={"prev_experience_Company"}>{props.SchoolName} {props.SchoolLocation && ","}{props.SchoolLocation} {props.startDate &&"|"} {StartDate} - {EndDate}</p>
+        <div className={"reusable_prev_educations"}>
+            <div className={"prev_education_degreeAndUni"}>
+                <p className={"prev_education_degree font-Libre"}>{props.FieldofStudy}</p>
+                <p className={"prev_education_uni"}>{props.SchoolName} {props.SchoolLocation && ","}{props.SchoolLocation} {props.startDate &&"|"} {StartDate} - {EndDate}</p>
             </div>
-            <div className={"prev_experience_desc"}>
+            <div className={"prev_education_desc"}>
                 {props.Description}
             </div>
         </div>
