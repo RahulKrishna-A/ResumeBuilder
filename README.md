@@ -2,6 +2,11 @@
 # Resume Generator
  
   The Resume Generator app is a user-friendly website that helps you create professional resumes easily. You fill in your details like work experience and education, and the app shows you a preview in real-time. It offers various resume designs to choose from, and when you're done, you can download your resume as a PDF file with one click. It's optimized to work on all devices, so you can create your perfect resume anytime, anywhere.
+
+## Live Demo 
+
+https://resume-builder-rahul.netlify.app/
+
 ## Screenshot
 
 
@@ -44,7 +49,7 @@ In order to setup and work on this project on your own, you will need to:
 
 3. A live demo of the project can be started by using:
 `npm run dev`
-# 🤝 Contributing
+## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
