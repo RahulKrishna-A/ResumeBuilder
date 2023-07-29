@@ -1,5 +1,8 @@
 import {useState} from "react";
 import {v4 as uuidv4} from 'uuid';
+import {useRef} from "react";
+import {useReactToPrint} from "react-to-print";
+
 import UserDetails from "./User_container jsx/UserDetails.jsx";
 import Educations from "./User_container jsx/Education.jsx";
 import Experiences from "./User_container jsx/Experience.jsx";
@@ -10,6 +13,7 @@ import PreviewUserDetails from "./Preview_container jsx/Preview_userdetails.jsx"
 import PreviewEducation from "./Preview_container jsx/Preview_ education.jsx";
 import PreviewProfessionalExperience from "./Preview_container jsx/Preview_professionalExperience.jsx";
 import PreviewKeySkills from "./Preview_container jsx/Preview_skills.jsx";
+import ReactToPrint from "react-to-print";
 
 import "./styles/Content.css"
 
@@ -278,6 +282,12 @@ export default function Content() {
 
     })
 
+    // ---------------------------------------------Print to pdf
+    const printRef = useRef();
+    const handlePrint = useReactToPrint({
+        content:()=>printRef.current,
+    });
+
 
     return (
         <div id={"Content-Containter"}>
@@ -322,14 +332,18 @@ export default function Content() {
                     <div>
                         <input className={"input-text"} type={"text"}/>
                         <button className={"skill_add_btn"} onClick={addKeySkills}>Add Skill</button>
+                        {/*<button className={"skill_add_btn"} onClick={handlePrint}>Add Skill</button>*/}
+
                     </div>
                 </div>
+                <button className={"add-btn print"} onClick={handlePrint}>Print CV</button>
+
 
 
             </div>
 
 
-            <div id={"Preview_container"}>
+            <div ref={printRef} id={"Preview_container"}>
                 <PreviewUserDetails
                     FirstName={UserDetailes.FirstName}
                     LastName={UserDetailes.LastName}

@@ -26,3 +26,11 @@
     width: 8rem;
     left: 50%;
 }
+
+@media screen and (max-width: 1250px){
+    .education-form{
+        display: grid;
+        grid-template-columns: 1fr;
+        box-shadow: 0 3px 8px -7px ;
+    }
+}

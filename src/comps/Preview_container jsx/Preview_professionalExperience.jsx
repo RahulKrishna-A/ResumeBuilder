@@ -18,8 +18,8 @@ export default function PreviewProfessionalExperience(props){
                 </p>
             </div>
             <div className={"prev_experience_desc"}>
-                 non odio non elit porttitor tincidunt. Donec fermentum, elit sit amet gravida molestie, orci dui eleifend sem, at blandit ipsum diam non purus. Duis dapibus nisi eget vehicula dignissim
-            </div>
+                {props.summary}
+                             </div>
         </div>
     )
 

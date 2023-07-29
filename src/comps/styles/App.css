@@ -1,3 +1,13 @@
 #app_container{
     background-color: #eceef2;
 }
+
+@media print {
+    body {
+        zoom: 1; /* Reset the zoom for printing */
+    }
+
+    /* Specify the container to be printed */
+    #divToPrint {
+        /* Add your custom print styles for the div here */
+    }}

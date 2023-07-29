@@ -22,3 +22,10 @@ display: grid;
     height: 1px;
     background: linear-gradient(to right, transparent, #ccc); /* Faded line gradient */
 }
+@media screen and (max-width: 1250px){
+    #personalised_form{
+        display: grid;
+        grid-template-columns: 1fr;
+        box-shadow: 0 3px 8px -7px ;
+    }
+}

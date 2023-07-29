@@ -28,3 +28,11 @@
     margin-top: 3rem;
     margin-left: 25%;
 }
+
+@media screen and (max-width: 1250px){
+    .experience-form{
+        display: grid;
+        grid-template-columns: 1fr;
+        box-shadow: 0 3px 8px -7px ;
+    }
+}
