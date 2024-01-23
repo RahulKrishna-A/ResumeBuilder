@@ -5,7 +5,7 @@
 
 ## Live Demo 
 
-https://resume-builder-rahul.netlify.app/
+https://resume-builder-rahul.netlify.app/ 
 
 ## Screenshot
 
